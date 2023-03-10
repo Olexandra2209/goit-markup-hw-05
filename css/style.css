@@ -57,6 +57,9 @@ body {
 .menu-link {
   display: flex;
 }
+.link {
+  position: relative;
+}
 .header-container {
   display: flex;
 }
@@ -92,6 +95,9 @@ body {
   color: var(--title-text-color);
   font-weight: 500;
   text-decoration: none;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .site-nav .link:hover,
 .site-nav .link:focus {
@@ -100,11 +106,25 @@ body {
 .site-nav .link.current {
   color: var(--hover-color);
 }
+.site-nav .link.current::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: #404bbf;
+  border-radius: 2px;
+  width: 100%;
+  height: 4px;
+  top: 44px;
+}
 .address {
   margin-left: auto;
 }
 .address-nav {
   display: flex;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .address-nav .mail,
 .address-nav .tel {
@@ -161,11 +181,13 @@ body {
   min-width: 169px;
   border-radius: 4px;
   border: none;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .btn:hover,
 .btn:focus {
-  color: var(--white-color);
-  background: var(--hover-color);
+  background-color: var(--hover-color);
 }
 .section {
   padding: 120px 0;
@@ -266,6 +288,9 @@ body {
   height: 100%;
   border-radius: 50%;
   background-color: var(--primary-brand);
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .team-social-link:is(:hover, :focus) {
   background-color: #404bbf;
@@ -300,6 +325,10 @@ body {
   border: 1px solid #8e8f99;
   border-radius: 4px;
   color: #8e8f99;
+  transition-property: border, color;
+  transition-duration: 250ms, 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1),
+    cubic-bezier(0.4, 0, 0.2, 1);
 }
 .customers-link:is(:hover, :focus) {
   border: 1px solid var(--hover-color);
@@ -367,10 +396,13 @@ body {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-media-link:is(:hover, :focus) {
-  background: #31d0aa;
+  background-color: #31d0aa;
 }
 .menu {
   padding-bottom: 120px;
@@ -395,6 +427,11 @@ body {
   padding: 12px 24px;
   border: 1px solid #e7e9fc;
   border-radius: 4px;
+  transition-property: background-color, color, border, box-shadow;
+  transition-duration: 250ms, 250ms, 250ms, 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1),
+    cubic-bezier(0.4, 0, 0.2, 1), cubic-bezier(0.4, 0, 0.2, 1),
+    cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button:hover,
 .button:focus {
